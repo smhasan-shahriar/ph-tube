@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PH Tube</title>
+    <!-- daisyUI integration  -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.6.4/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                clifford: '#da373d',
+                mainColor: '#171717',
+                secondaryColor: '#252525',
+                redColor: '#FF1F3D',
+              }
+            }
+          }
+        }
+      </script>
+
+    <!-- google font integration  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        .font-inter{
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="font-inter w-[1440px] m-auto text-mainColor">
+    <header class="mx-[60px] mt-[50px]">
+        <nav class="flex justify-between items-center">
+            <div><img src="images/logo.png" alt=""></div>
+            <button class="text-secondaryColor text-lg font-medium rounded-[4px]" style="padding: 10px 20px; background: rgba(37, 37, 37, 0.20);">Sort by view</button>
+            <button class="btn bg-redColor capitalize text-white rounded-[4px]">Blog</button>
+        </nav>
+        <hr class="my-8">
+    </header>
+    <main>
+
+    </main>
+    <footer>
+
+    </footer>
+    <script src="js/index.js"></script>
+</body>
+</html>
