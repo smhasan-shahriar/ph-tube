@@ -10,11 +10,20 @@ const tabLoader = async () => {
 const tabCreator = (tabArray) => {
 
     tabArray.forEach(element => {
+        const div = document.createElement('div');
+        div.innerHTML = `
+        <button id= '${element.category_id}' class= "btn capitalize rounded-[4px]" onclick="tabChange(this)">${element.category}</button>
+        
+        `
+
         const button = document.createElement('button');
         button.classList.add('btn', 'capitalize', 'rounded-[4px]');
+        button.onclick = `"${tabChange(this)}"`;
+        button.id = `${element.category_id}`;
         button.innerText = `${element.category}`;
-        tabContainer.appendChild(button);
+        tabContainer.appendChild(div);
     })
+    cardLoader(1000);
 }
 
 const cardLoader = async (id) => {
@@ -49,10 +58,12 @@ const cardCreator = (cardArray) => {
 
     })
 
-
-   
-
 }
 
 tabLoader();
-cardLoader(1000);
+
+const tabChange = (target) => {
+    cardContainer.innerHTML = "";
+    cardLoader(target.id);
+}
+
