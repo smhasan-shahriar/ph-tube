@@ -15,12 +15,6 @@ const tabCreator = (tabArray) => {
         <button id= '${element.category_id}' class= "btn capitalize rounded-[4px]" onclick="tabChange(this)">${element.category}</button>
         
         `
-
-        const button = document.createElement('button');
-        button.classList.add('btn', 'capitalize', 'rounded-[4px]');
-        button.onclick = `"${tabChange(this)}"`;
-        button.id = `${element.category_id}`;
-        button.innerText = `${element.category}`;
         tabContainer.appendChild(div);
     })
     cardLoader(1000);
@@ -29,7 +23,23 @@ const tabCreator = (tabArray) => {
 const cardLoader = async (id) => {
     const response = await fetch(`https://openapi.programming-hero.com/api/videos/category/${id}`);
     const data = await response.json();
-    cardCreator(data.data);
+    if(data.status === true){
+        cardContainer.classList.add('grid', 'grid-cols-1', 'md:grid-cols-2', 'lg:grid-cols-4', 'gap-6');
+        cardCreator(data.data);
+    }
+    else{
+        cardContainer.classList.remove('grid', 'grid-cols-1', 'md:grid-cols-2', 'lg:grid-cols-4', 'gap-6');
+        cardContainer.classList.add('flex', 'justify-center', 'items-center');
+        cardContainer.innerHTML = `
+        <div class="flex flex-col justify-center items-center lg:my-[150px]">
+        <div><img src="images/icon.png" alt=""></div>
+        <h2 class="align-center text-[32px] font-bold">Oops!! Sorry, There is no <br> content here</h2>
+      </div>
+        
+        
+        `
+    }
+    console.log(data);
 }
 
 const cardCreator = (cardArray) => {
