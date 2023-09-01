@@ -13,12 +13,13 @@ const tabCreator = (tabArray) => {
     tabArray.forEach(element => {
         const div = document.createElement('div');
         div.innerHTML = `
-        <button id= '${element.category_id}' class= "btn capitalize rounded-[4px]" onclick="tabChange(this)">${element.category}</button>
+        <button id= '${element.category_id}' class= "btn capitalize rounded-[4px] button-tab" onclick="tabChange(this); buttonColor(this)">${element.category}</button>
         
         `
         tabContainer.appendChild(div);
     })
     cardLoader(1000);
+    document.getElementById('1000').classList.add('active');
 }
 
 const cardLoader = async (id, clicked) => {
@@ -101,4 +102,15 @@ const sortMethod = (target) => {
 
 const openUrl = () => {
   window.open("blog.html");
+}
+
+const buttonColor = (target) => {
+  const buttons = document.querySelectorAll('.button-tab');
+  buttons.forEach(button => {
+    button.classList.remove('active');
+  })
+  console.log(buttons);
+  console.log(target);
+  target.classList.add('active');
+  console.log(target)
 }
