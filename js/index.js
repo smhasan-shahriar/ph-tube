@@ -33,9 +33,9 @@ const cardLoader = async (id, clicked) => {
         cardContainer.classList.remove('grid', 'grid-cols-1', 'md:grid-cols-2', 'lg:grid-cols-4', 'gap-6');
         cardContainer.classList.add('flex', 'justify-center', 'items-center');
         cardContainer.innerHTML = `
-        <div class="flex flex-col justify-center items-center lg:my-[150px]">
+        <div class="flex flex-col justify-center items-center md:my-[150px] my-24">
         <div><img src="images/icon.png" alt=""></div>
-        <h2 class="align-center text-[32px] font-bold">Oops!! Sorry, There is no <br> content here</h2>
+        <h2 class="align-center md:text-[32px] text-2xl font-bold text-center">Oops!! Sorry, There is no <br> content here</h2>
       </div>
         
         
