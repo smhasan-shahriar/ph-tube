@@ -1,5 +1,6 @@
 const tabContainer = document.getElementById('tab-container');
 const cardContainer = document.getElementById('card-container');
+const sortButton = document.getElementById('1000');
 
 const tabLoader = async () => {
     const response = await fetch('https://openapi.programming-hero.com/api/videos/categories');
@@ -20,12 +21,12 @@ const tabCreator = (tabArray) => {
     cardLoader(1000);
 }
 
-const cardLoader = async (id) => {
+const cardLoader = async (id, clicked) => {
     const response = await fetch(`https://openapi.programming-hero.com/api/videos/category/${id}`);
     const data = await response.json();
     if(data.status === true){
         cardContainer.classList.add('grid', 'grid-cols-1', 'md:grid-cols-2', 'lg:grid-cols-4', 'gap-6');
-        cardCreator(data.data);
+        cardCreator(data.data, clicked);
     }
     else{
         cardContainer.classList.remove('grid', 'grid-cols-1', 'md:grid-cols-2', 'lg:grid-cols-4', 'gap-6');
@@ -39,11 +40,21 @@ const cardLoader = async (id) => {
         
         `
     }
-    console.log(data);
+
 }
 
-const cardCreator = (cardArray) => {
-
+const cardCreator = (cardArray, clicked) => {
+    
+    if(clicked){
+        cardArray = cardArray.sort((a, b) => {
+        const viewsNumberA = parseFloat((a.others.views.slice(0, length-1))*1000);
+        const viewsNumberB = parseFloat((b.others.views.slice(0, length-1))*1000);
+      
+        return viewsNumberB - viewsNumberA;
+      } );
+      
+    }
+    
     cardArray.forEach(card => {
         const div = document.createElement('div');
         div.classList.add("w-[312px]");
@@ -78,5 +89,12 @@ tabLoader();
 const tabChange = (target) => {
     cardContainer.innerHTML = "";
     cardLoader(target.id);
+    sortButton.id=`${target.id}`; 
+    console.log(sortButton)
+}
+
+const sortMethod = (target) => {
+  cardContainer.innerHTML = "";
+    cardLoader(target.id, true);
 }
 
