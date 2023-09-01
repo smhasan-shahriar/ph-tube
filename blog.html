@@ -32,38 +32,41 @@
         }
     </style>
 </head>
-<body class="font-inter max-w-[1440px] m-auto text-mainColor mb-28">
-    <header class="bg-red-500 text-white text-5xl p-5 font-bold mx-auto text-center">
-        <h1>Q&A related to JavaScript</h1>
+<body class="bg-amber-50 font-inter max-w-[1440px] m-auto text-mainColor grid grid-cols-1 h-screen">
+    <header class="bg-red-500 text-white text-5xl p-5 font-bold mx-auto text-center w-full">
+        <h1>Q&A Blog related to JavaScript</h1>
     </header>
     <main>
         <div class="bg-amber-50 p-10 space-y-5">
             <div class="text-3xl font-medium shadow-lg p-3 space-y-3">
-                <h2>Discuss the scope of var, let, and const</h2>
+                <h2>Discuss the scope of <code>var</code>, <code>let</code>, and <code>const</code></h2>
                 <div class="text-lg font-normal space-y-3">
-                    <p class="list-item list-inside list-[disc]">var declarations are globally scoped or function scoped. The scope is global when a var variable is declared outside a function. var is function scoped when it is declared within a function. Variables declared with var can be reassigned.</p>
-                    <p class="list-item list-inside list-[disc]">let declarations are block scoped. So a variable declared in a block with let  is only available for use within that block.  Variables declared with let can be reassigned.</p>
-                    <p class="list-item list-inside list-[disc]">const declarations are block scoped. So a variable declared in a block with let  is only available for use within that block.  Variables declared with cont cannot be reassigned.</p>
+                    <p class="list-item list-inside list-[disc]"><code>var</code> declarations are global/functional scoped based on context. The scope is global when a <code>var</code> variable is declared outside a function. <code>var</code> is function scoped when it is declared within a function. Variables declared with <code>var</code> can be reassigned.</p>
+                    <p class="list-item list-inside list-[disc]"><code>let</code> declarations are block scoped. So a variable declared in a block with <code>let</code>  is only available for use within that block.  Variables declared with <code>let</code> can be reassigned.</p>
+                    <p class="list-item list-inside list-[disc]"><code>const</code> declarations are block scoped. So a variable declared in a block with <code>const</code> is only available for use within that block.  Variables declared with <code>const</code> cannot be reassigned.</p>
                 </div>
             </div>
             <div class="text-3xl font-medium shadow-lg p-3 space-y-3">
-                <h2>Tell us the use cases of null and undefined</h2>
+                <h2>Tell us the use cases of <code>null</code> and <code>undefined</code></h2>
                 <div class="text-lg font-normal space-y-3">
-                    <p class="list-item list-inside list-[disc]">null is trivial/other type of variable. null should be used when we want to explicitly set a value to a variable which does not exist. The type of null is object.</p>
-                    <p class="list-item list-inside list-[disc]">undefined is a variable that has been declared but not initialized. We can get undefined through several ways such as: with a function with no return, accessing array elements outside of index range etc.</p>
+                    <p class="list-item list-inside list-[disc]"><code>null</code> is trivial/other type of variable. <code>null</code> should be used when we want to explicitly set a value to a variable which does not exist. The type of <code>null</code> is object.</p>
+                    <p class="list-item list-inside list-[disc]"><code>undefined</code> is a variable that has been declared but not initialized. We can get <code>undefined</code> through several ways such as: with a function with no return, accessing array elements outside of index range etc.</p>
                 </div>
             </div>
             <div class="text-3xl font-medium shadow-lg p-3 space-y-3">
                 <h2>What do you mean by REST API?</h2>
                 <div class="text-lg font-normal space-y-3">
-                    <p class="list-item list-inside list-[disc]">A REST API is a way of easily accessing web services which allows interaction with resources over the internet to build web application, mobile application and other services.</p>
+                    <p class="list-item list-inside list-[disc]">A REST API is a way of easily accessing web services which allows interaction with resources such as fetching information from a server over the internet to build web application, mobile application and other services.</p>
                 </div>
             </div>
+            
             
         </div>
     </main>
     <footer>
-
+        <div class="font-medium py-3 px-5 space-y-3 text-center">
+            <img class="mx-auto btn bg-transparent border-0 w-52 object-contain" onclick="window.location.href='index.html'" src="images/logo.png" alt="">
+        </div>
     </footer>
 
 </body>

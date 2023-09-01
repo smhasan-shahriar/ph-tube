@@ -101,7 +101,7 @@ const sortMethod = (target) => {
 }
 
 const openUrl = () => {
-  window.open("blog.html");
+  window.location.href = "blog.html";
 }
 
 const buttonColor = (target) => {
@@ -109,8 +109,5 @@ const buttonColor = (target) => {
   buttons.forEach(button => {
     button.classList.remove('active');
   })
-  console.log(buttons);
-  console.log(target);
   target.classList.add('active');
-  console.log(target)
 }
