@@ -58,10 +58,10 @@ const cardCreator = (cardArray, clicked) => {
     
     cardArray.forEach(card => {
         const div = document.createElement('div');
-        div.classList.add("w-[312px]");
+        div.classList.add("w-[312px]", "lg:max-[1360px]:w-[24vw]");
         div.innerHTML= `
-        <div class="w-[312px]">
-          <div class="relative"><img class="w-[312px] h-[200px] rounded-lg object-cover mb-5" src=${card?.thumbnail} alt="">
+        <div class="w-[312px] lg:max-[1360px]:w-[24vw]">
+          <div class="relative"><img class="w-[312px] lg:max-[1360px]:w-[24vw] h-[200px] rounded-lg object-cover mb-5" src=${card?.thumbnail} alt="">
           ${card?.others?.posted_date?`<div class="absolute bottom-3 right-3 text-white z-10 bg-mainColor p-1 text-[10px] rounded-[4px]"><span>${Math.floor(((card?.others?.posted_date)/60)/60)}</span>hrs <span>${Math.floor(((card?.others?.posted_date)/60)%60)}</span> min ago</div>`:``}
           
           </div>
