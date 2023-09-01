@@ -98,3 +98,6 @@ const sortMethod = (target) => {
     cardLoader(target.id, true);
 }
 
+const openUrl = () => {
+  window.open("blog.html");
+}
