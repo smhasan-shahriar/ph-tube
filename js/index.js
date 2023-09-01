@@ -50,7 +50,7 @@ const cardCreator = (cardArray) => {
         div.innerHTML= `
         <div class="w-[312px]">
           <div class="relative"><img class="w-[312px] h-[200px] rounded-lg object-cover mb-5" src=${card?.thumbnail} alt="">
-          ${card?.others?.posted_date?'<div class="absolute bottom-3 right-3 text-white z-10 bg-mainColor p-1 text-[10px] rounded-[4px]"><span>3</span>hrs <span>56</span> min ago</div>':''}
+          ${card?.others?.posted_date?`<div class="absolute bottom-3 right-3 text-white z-10 bg-mainColor p-1 text-[10px] rounded-[4px]"><span>${Math.floor(((card?.others?.posted_date)/60)/60)}</span>hrs <span>${Math.floor(((card?.others?.posted_date)/60)%60)}</span> min ago</div>`:``}
           
           </div>
           <div class="flex gap-3">
