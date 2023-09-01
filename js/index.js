@@ -1,6 +1,6 @@
 const tabContainer = document.getElementById('tab-container');
 const cardContainer = document.getElementById('card-container');
-const sortButton = document.getElementById('1000');
+const sortButton = document.getElementById('sort-1000');
 
 const tabLoader = async () => {
     const response = await fetch('https://openapi.programming-hero.com/api/videos/categories');
@@ -89,13 +89,14 @@ tabLoader();
 const tabChange = (target) => {
     cardContainer.innerHTML = "";
     cardLoader(target.id);
-    sortButton.id=`${target.id}`; 
-    console.log(sortButton)
+    sortButton.id=`sort-${target.id}`; 
+
 }
 
 const sortMethod = (target) => {
   cardContainer.innerHTML = "";
-    cardLoader(target.id, true);
+  const targetId = target.id.split('-')[1];
+  cardLoader(targetId, true);
 }
 
 const openUrl = () => {
