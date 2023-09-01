@@ -13,7 +13,7 @@ const tabCreator = (tabArray) => {
     tabArray.forEach(element => {
         const div = document.createElement('div');
         div.innerHTML = `
-        <button id= '${element.category_id}' class= "btn capitalize rounded-[4px] button-tab text-lg" onclick="tabChange(this); buttonColor(this)">${element.category}</button>
+        <button id= '${element.category_id}' class= "btn capitalize rounded-[4px] button-tab text-lg opacity-90 font-medium" onclick="tabChange(this); buttonColor(this)">${element.category}</button>
         
         `
         tabContainer.appendChild(div);
